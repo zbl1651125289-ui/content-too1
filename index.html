@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="把生活经历变成可直接拍摄的中文内容灵感。" />
+    <title>我的内容助手</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">CREATOR TOOLKIT</p>
+        <h1>我的内容助手</h1>
+        <p class="hero-copy">把你的真实经历，整理成马上能拍的内容。</p>
+      </header>
+
+      <section class="composer card" aria-labelledby="compose-title">
+        <div class="section-heading">
+          <div>
+            <p class="step">01</p>
+            <h2 id="compose-title">告诉我你的故事</h2>
+          </div>
+          <span class="badge">本地生成</span>
+        </div>
+
+        <label for="experience">你的生活经历或想法</label>
+        <textarea id="experience" rows="7" maxlength="600" placeholder="例如：我辞掉了稳定工作，第一次一个人去大理住了一个月。刚开始很害怕，后来发现慢一点生活也没关系。"></textarea>
+        <div class="field-meta"><span>越真实，越有感染力</span><span id="char-count">0 / 600</span></div>
+
+        <fieldset>
+          <legend>想做成哪种内容？</legend>
+          <div class="type-grid" role="radiogroup" aria-label="内容类型">
+            <label class="type-option"><input type="radio" name="content-type" value="短视频口播" checked /><span>🎙️ 短视频口播</span></label>
+            <label class="type-option"><input type="radio" name="content-type" value="图文笔记" /><span>📝 图文笔记</span></label>
+            <label class="type-option"><input type="radio" name="content-type" value="朋友圈文案" /><span>💬 朋友圈文案</span></label>
+            <label class="type-option"><input type="radio" name="content-type" value="直播分享" /><span>✨ 直播分享</span></label>
+          </div>
+        </fieldset>
+
+        <button id="generate-button" class="generate-button" type="button">
+          <span>生成内容</span><span aria-hidden="true">→</span>
+        </button>
+        <p id="form-message" class="form-message" role="alert"></p>
+      </section>
+
+      <section id="results" class="results" aria-live="polite" aria-labelledby="results-title" hidden>
+        <div class="results-intro">
+          <p class="step">02</p>
+          <h2 id="results-title">你的内容已经准备好了</h2>
+          <p>可以直接复制、微调，再用你自己的声音讲出来。</p>
+        </div>
+
+        <article class="result-card featured">
+          <div class="result-title-row"><h3>短视频开头</h3><button class="copy-button" type="button" data-copy="hook">复制</button></div>
+          <p id="hook" class="result-content"></p>
+        </article>
+        <article class="result-card">
+          <div class="result-title-row"><h3>30 秒口播稿</h3><button class="copy-button" type="button" data-copy="script">复制</button></div>
+          <p id="script" class="result-content script-content"></p>
+        </article>
+        <article class="result-card">
+          <div class="result-title-row"><h3>标题灵感</h3><button class="copy-button" type="button" data-copy="titles">复制</button></div>
+          <ul id="titles" class="title-list"></ul>
+        </article>
+        <article class="result-card advice-card">
+          <div class="result-title-row"><h3>拍摄建议</h3><button class="copy-button" type="button" data-copy="advice">复制</button></div>
+          <p id="advice" class="result-content"></p>
+        </article>
+      </section>
+    </main>
+    <footer>你的经历，值得被认真说出来。</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
